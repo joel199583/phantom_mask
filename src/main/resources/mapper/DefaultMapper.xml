@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kdan.demo.mapper.DefaultMapper">
+	
+	<update id="truncateAllTables">
+		SET FOREIGN_KEY_CHECKS = 0;
+        TRUNCATE TABLE transaction_history;
+        TRUNCATE TABLE mask;
+        TRUNCATE TABLE store_hours;
+        TRUNCATE TABLE user;
+        TRUNCATE TABLE mask_type;
+        TRUNCATE TABLE store;
+        SET FOREIGN_KEY_CHECKS = 1;
+    </update>
+	
+	<insert id="insertStore" parameterType="HashMap">
+        INSERT INTO store (name, cash_balance)
+        VALUES (#{name}, #{cashBalance})
+    </insert>
+    
+    <insert id="insertUser" parameterType="HashMap">
+        INSERT INTO user (name, cash_balance)
+        VALUES (#{name}, #{cashBalance})
+    </insert>
+	
+</mapper>
