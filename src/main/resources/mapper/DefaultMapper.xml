@@ -14,8 +14,8 @@
     </update>
 	
 	<insert id="insertStore" parameterType="HashMap">
-        INSERT INTO store (name, cash_balance)
-        VALUES (#{name}, #{cashBalance})
+        INSERT INTO store (name, cash_balance, opening_hours)
+        VALUES (#{name}, #{cashBalance}, #{openingHours})
     </insert>
     
     <insert id="insertUser" parameterType="HashMap">

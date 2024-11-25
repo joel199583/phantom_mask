@@ -47,7 +47,7 @@ public class DataInitializer {
             // store init data
             int insertStoreRowcount = 
 	            pharmacies.stream()
-	            	.map(data -> Map.of("name", data.get("name"), "cashBalance", data.get("cashBalance")))
+	            	.map(data -> Map.of("name", data.get("name"), "cashBalance", data.get("cashBalance"), "openingHours", data.get("openingHours")))
 	            	.peek(System.out::println)
 	            	.mapToInt(defaultMapper::insertStore)
 	            	.sum();
