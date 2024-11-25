@@ -22,5 +22,49 @@
         INSERT INTO user (name, cash_balance)
         VALUES (#{name}, #{cashBalance})
     </insert>
+    
+    <insert id="insertMaskType" parameterType="HashMap">
+        INSERT INTO mask_type (name, color, quantity_per_pack)
+        VALUES (#{name}, #{color}, #{quantityPerPack})
+    </insert>
+    
+    <insert id="insertMask" parameterType="HashMap">
+        INSERT INTO mask (store_id, mask_type_id, price)
+        select 
+        	(select id from store where name = #{storeName}) as store_id,
+        	(
+        		select id
+        		from mask_type
+        		where name = #{name}
+        		and color = #{color}
+        		and quantity_per_pack = #{quantityPerPack}
+        	) as mask_type_id,
+        	#{price} as price
+    </insert>
+    
+    <insert id="insertStoreHours" parameterType="HashMap">
+        INSERT INTO store_hours (store_id, weekday, open_time, close_time)
+        select 
+        	(select id from store where name = #{storeName}) as store_id,
+        	#{weekday},
+        	#{openTime},
+        	#{closeTime}
+    </insert>
+    
+    <insert id="insertTransactionHistory" parameterType="HashMap">
+        INSERT INTO transaction_history (user_id, store_id, mask_type_id, transaction_amount, transaction_date)
+        select 
+        	(select id from user where name = #{userName}) as user_id,
+        	(select id from store where name = #{storeName}) as store_id,
+        	(
+        		select id
+        		from mask_type
+        		where name = #{maskType.name}
+        		and color = #{maskType.color}
+        		and quantity_per_pack = #{maskType.quantityPerPack}
+        	) as mask_type_id,
+        	#{transactionAmount} as transaction_amount,
+        	#{transactionDate} as transaction_date
+    </insert>
 	
 </mapper>
