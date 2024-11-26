@@ -1,5 +1,5 @@
 ## Postman 
-[this](./kdan.postman_collection.json) json file for Postman.
+[this](./kdan.postman.json) json file for Postman.
 
 ## API 文件
 [swagger](https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app/swagger-ui/index.html#)
