@@ -6,6 +6,7 @@
 
 ### Demo Site Url
 
-The demo site is ready on [ngrok](https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app); you can try any APIs on this demo site.
+The demo site is ready on [Joel's Demo](https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app); you can try any APIs on this demo site.
 
+麻煩使用Postman測試api, swagger-ui 目前無法直接測試API, 問題排除中...
 - --
