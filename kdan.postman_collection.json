@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "771e0749-63fb-4fd4-8edc-a1b39edf85c6",
+		"name": "kdan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20461199"
+	},
+	"item": [
+		{
+			"name": "store_open_api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://22aa-122-100-95-146.ngrok-free.app/store/open?weekDay=Sun&time=11:00",
+					"protocol": "https",
+					"host": [
+						"22aa-122-100-95-146",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"store",
+						"open"
+					],
+					"query": [
+						{
+							"key": "weekDay",
+							"value": "Sun"
+						},
+						{
+							"key": "time",
+							"value": "11:00"
+						}
+					]
+				},
+				"description": "List all pharmacies open at a specific time and on a day of the week if requested."
+			},
+			"response": []
+		},
+		{
+			"name": "store_mask_pricerange_count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://22aa-122-100-95-146.ngrok-free.app/store/priceRangeWithinCount?minPrice=5&maxPrice=20&comparison=GREATER&comparisonNumber=3",
+					"protocol": "https",
+					"host": [
+						"22aa-122-100-95-146",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"store",
+						"priceRangeWithinCount"
+					],
+					"query": [
+						{
+							"key": "minPrice",
+							"value": "5"
+						},
+						{
+							"key": "maxPrice",
+							"value": "20"
+						},
+						{
+							"key": "comparison",
+							"value": "GREATER"
+						},
+						{
+							"key": "comparisonNumber",
+							"value": "3"
+						}
+					]
+				},
+				"description": "List all pharmacies with more or less than x mask products within a price range."
+			},
+			"response": []
+		},
+		{
+			"name": "store_maskinfo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://22aa-122-100-95-146.ngrok-free.app/store/maskinfo?storeName=Welltrack&sortBy=PRICE",
+					"protocol": "https",
+					"host": [
+						"22aa-122-100-95-146",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"store",
+						"maskinfo"
+					],
+					"query": [
+						{
+							"key": "storeName",
+							"value": "Welltrack"
+						},
+						{
+							"key": "sortBy",
+							"value": "PRICE"
+						}
+					]
+				},
+				"description": "List all masks sold by a given pharmacy, sorted by mask name or price."
+			},
+			"response": []
+		},
+		{
+			"name": "store_fuzzysearch",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://22aa-122-100-95-146.ngrok-free.app/store/searchStore?keyword=que&searchBy=mask",
+					"protocol": "https",
+					"host": [
+						"22aa-122-100-95-146",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"store",
+						"searchStore"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "que"
+						},
+						{
+							"key": "searchBy",
+							"value": "mask"
+						}
+					]
+				},
+				"description": "Search for pharmacies or masks by name, ranked by relevance to the search term."
+			},
+			"response": []
+		},
+		{
+			"name": "user_top_transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://22aa-122-100-95-146.ngrok-free.app/user/top-transactions?startDate=2021-01-10&endDate=2021-01-20&greaterNumber=5",
+					"protocol": "https",
+					"host": [
+						"22aa-122-100-95-146",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"user",
+						"top-transactions"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2021-01-10"
+						},
+						{
+							"key": "endDate",
+							"value": "2021-01-20"
+						},
+						{
+							"key": "greaterNumber",
+							"value": "5"
+						}
+					]
+				},
+				"description": "The top x users by total transaction amount of masks within a date range."
+			},
+			"response": []
+		},
+		{
+			"name": "transaction-info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://22aa-122-100-95-146.ngrok-free.app/user/date-range-transaction-info?startDate=2021-01-01&endDate=2021-01-10",
+					"protocol": "https",
+					"host": [
+						"22aa-122-100-95-146",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"user",
+						"date-range-transaction-info"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2021-01-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2021-01-10"
+						}
+					]
+				},
+				"description": "The total amount of masks and dollar value of transactions within a date range."
+			},
+			"response": []
+		}
+	]
+}
