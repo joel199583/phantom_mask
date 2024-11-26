@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kdan.demo.mapper.UserMapper">
+
+	<resultMap id="userResultMap" type="com.kdan.demo.dto.UserDTO">
+	    <result property="userId" column="id"/>
+	    <result property="userName" column="name"/>
+	    <result property="cashBalance" column="cash_balance"/>
+	    <result property="transactionSum" column="transaction_sum"/>
+	</resultMap>
+
+    <select id="fineTopUserByDateRange" resultMap="userResultMap">
+    <![CDATA[
+    	select 
+			u.id,
+			u.name,
+			u.cash_balance,
+			sum(th.transaction_amount) as transaction_sum
+		from transaction_history th
+		join user u
+		on th.user_id = u.id
+		where th.transaction_date BETWEEN #{startDate} AND #{endDate}
+		group by 
+			u.id,
+			u.name,
+			u.cash_balance
+		order by sum(th.transaction_amount) desc
+		limit #{greaterNumber}
+    ]]>
+    </select>
+    
+    <select id="fineCashBalanceByUserId" resultType="double">
+    <![CDATA[
+    	select u.cash_balance
+    	from user u
+    	where u.id = #{userId}
+    ]]>
+    </select>
+    
+    <update id="updateUserCashBalanceByUserId">
+    	update user set 
+    		cash_balance = #{cashBalance}
+    	where id = #{userId}
+    </update>
+	
+</mapper>

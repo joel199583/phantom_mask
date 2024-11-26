@@ -25,7 +25,7 @@
     ]]>
     </select>
     
-    <select id="findMaskByStoreName" resultMap="storeResultMap">
+    <select id="findMaskByStoreName" resultMap="maskResultMap">
     <![CDATA[
     	select
     		*
@@ -61,5 +61,59 @@
 		having count(m.id) ${comparison} #{comparisonNumber}
     ]]>
     </select>
+    
+    <select id="fuzzySearchStoreByStoreName" resultMap="storeResultMap">
+    <![CDATA[
+    	select
+			s.id,
+			s.name,
+			s.opening_hours
+		from store s
+		where lower(s.name) like concat('%', lower(#{keyword}), '%')
+    ]]>
+    </select>
+    
+    <select id="fuzzySearchStoreByMaskName" resultMap="storeResultMap">
+    <![CDATA[
+    	select
+			s.id,
+			s.name,
+			s.opening_hours
+		from mask_type mt
+		join mask m
+			on mt.id = m.mask_type_id
+		join store s
+		on s.id = m.store_id 
+		where lower(CONCAT(mt.name, ' (', mt.color, ')', ' (', mt.quantity_per_pack, ' per pack)')) like concat('%', lower(#{keyword}), '%')
+		group by
+			s.id,
+			s.name,
+			s.opening_hours
+    ]]>
+    </select>
+    
+    <select id="findPriceByStoreIdAndMaskTypeId" resultType="Double">
+    <![CDATA[
+    	select
+			m.price
+		from mask m
+		where m.store_id = #{storeId}
+		and m.mask_type_id = #{maskTypeId}
+    ]]>
+    </select>
+    
+    <select id="fineCashBalanceByStoreId" resultType="double">
+    <![CDATA[
+    	select s.cash_balance
+    	from store s
+    	where s.id = #{storeId}
+    ]]>
+    </select>
+    
+    <update id="updateStoreCashBalanceByStoreId">
+    	update store set 
+    		cash_balance = #{cashBalance}
+    	where id = #{storeId}
+    </update>
 	
 </mapper>

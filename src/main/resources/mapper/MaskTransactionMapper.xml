@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kdan.demo.mapper.MaskTransactionMapper">
+
+	<resultMap id="maskTransactionResultMap" type="com.kdan.demo.dto.MaskTransactionDTO">
+	    <result property="maskCount" column="mask_count"/>
+	    <result property="transactionSum" column="transaction_sum"/>
+	</resultMap>
+
+    <select id="queryTransactionInfoByDateRange" resultMap="maskTransactionResultMap">
+    <![CDATA[
+	    select 
+			count(1) as mask_count, 
+			sum(th.transaction_amount) as transaction_sum
+		from transaction_history th
+		where th.transaction_date BETWEEN #{startDate} AND #{endDate}
+    ]]>
+    </select>
+    
+    <insert id="insertTransactionHistory">
+        INSERT INTO transaction_history (user_id, store_id, mask_type_id, transaction_amount, transaction_date)
+        select
+        	#{userId},
+        	#{storeId},
+        	#{maskTypeId},
+        	(
+        		select price
+        		from mask
+        		where store_id = #{storeId}
+        		and mask_type_id = #{maskTypeId}
+        	),
+        	#{transactionDate}
+    </insert>
+	
+</mapper>

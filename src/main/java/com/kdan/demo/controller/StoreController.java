@@ -24,7 +24,7 @@ import com.kdan.demo.service.StoreService;
 public class StoreController {
 	
 	public enum WEEKDAY {
-        Mon, Tue, Wed, Thur, Fri, Sat, Sun
+        MON, TUE, WED, THUR, FRI, STA, SUN
     }
 	
 	public enum MASK_SORTBY {
@@ -47,6 +47,10 @@ public class StoreController {
 	    }
 	}
 	
+	public enum SEARCH_TYPE {
+        MASK, STORE
+    }
+	
     @Autowired
     private StoreService storeService;
 
@@ -60,11 +64,11 @@ public class StoreController {
     @GetMapping(value = "/maskinfo")
     public List<MaskDTO> getMaskInfo(
     		@RequestParam String storeName,
-            @RequestParam MASK_SORTBY sortBy) {
+            @RequestParam(defaultValue = "PRICE") MASK_SORTBY sortBy) {
         return storeService.getMaskByStoreName(storeName, sortBy.name());
     }
     
-    @GetMapping(value = "/storeWithinCountAndPrice")
+    @GetMapping(value = "/price-range-masktype-count")
     public List<StoreDTO> getStoreWithinCountAndPrice(
     		@RequestParam double minPrice, 
     		@RequestParam double maxPrice,
@@ -72,16 +76,17 @@ public class StoreController {
             @RequestParam int comparisonNumber) {
         return storeService.getStoreByCountAndPriceRange(minPrice, maxPrice, comparison.getSymbol(), comparisonNumber);
     }
-//
-//    @GetMapping(value = "/searchPharmacies")
-//    public List<PharmaciesResponse> searchPharmacies(@RequestParam String searchInfo, @RequestParam String searchBy) {
-//
-//        return pharmaciesService.searchPharmaciesInformations(searchInfo, searchBy);
-//
-//    }
+    
+    @GetMapping(value = "/search-store")
+    public List<StoreDTO> fuzzySearchStore(
+    		@RequestParam String keyword, 
+    		@RequestParam(defaultValue = "MASK") SEARCH_TYPE searchBy) {
+        return storeService.searchStore(keyword, searchBy);
+
+    }
     
     @InitBinder
-    public void initBinder1(WebDataBinder binder) {
+    public void initBinder(WebDataBinder binder) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm[:ss]");
         binder.registerCustomEditor(LocalTime.class, new PropertyEditorSupport() {
             @Override
@@ -93,36 +98,29 @@ public class StoreController {
                 }
             }
         });
-    }
-    
-    @InitBinder
-    public void initBinder2(WebDataBinder binder) {
         binder.registerCustomEditor(MASK_SORTBY.class, new PropertyEditorSupport() {
             @Override
             public void setAsText(String text) {
                 setValue(MASK_SORTBY.valueOf(text.toUpperCase())); // 忽略大小寫
             }
         });
-    }
-    
-    @InitBinder
-    public void initBinder3(WebDataBinder binder) {
         binder.registerCustomEditor(WEEKDAY.class, new PropertyEditorSupport() {
             @Override
             public void setAsText(String text) {
                 setValue(WEEKDAY.valueOf(text.toUpperCase())); // 忽略大小寫
             }
         });
-    }
-    
-    @InitBinder
-    public void initBinder4(WebDataBinder binder) {
         binder.registerCustomEditor(COMPARISON.class, new PropertyEditorSupport() {
             @Override
             public void setAsText(String text) {
                 setValue(COMPARISON.valueOf(text.toUpperCase())); // 忽略大小寫
             }
         });
+        binder.registerCustomEditor(SEARCH_TYPE.class, new PropertyEditorSupport() {
+            @Override
+            public void setAsText(String text) {
+                setValue(SEARCH_TYPE.valueOf(text.toUpperCase())); // 忽略大小寫
+            }
+        });
     }
-
 }

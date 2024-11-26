@@ -16,4 +16,9 @@ public interface StoreMapper {
 			@Param("maxPrice") double maxPrice, 
 			@Param("comparison") String comparison,
 			@Param("comparisonNumber") int comparisonNumber);
+	List<StoreDTO> fuzzySearchStoreByStoreName(@Param("keyword") String keyword);
+	List<StoreDTO> fuzzySearchStoreByMaskName(@Param("keyword") String keyword);
+	double findPriceByStoreIdAndMaskTypeId(@Param("storeId") int storeId,@Param("maskTypeId") int maskTypeId);
+	double fineCashBalanceByStoreId(@Param("storeId") int storeId);
+	int updateStoreCashBalanceByStoreId(@Param("storeId") int storeId, @Param("cashBalance") double cashBalance);
 }
