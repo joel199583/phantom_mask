@@ -3,6 +3,7 @@ CREATE TABLE store (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
   cash_balance DECIMAL(10, 2) NOT NULL,
+  opening_hours varchar(100) NOT NULL,
   PRIMARY KEY (id)
 );
 
