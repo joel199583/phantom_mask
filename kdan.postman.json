@@ -12,10 +12,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://22aa-122-100-95-146.ngrok-free.app/store/open?weekDay=Sun&time=11:00",
+					"raw": "https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app/store/open?weekDay=Sun&time=11:00",
 					"protocol": "https",
 					"host": [
-						"22aa-122-100-95-146",
+						"eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb",
 						"ngrok-free",
 						"app"
 					],
@@ -44,16 +44,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://22aa-122-100-95-146.ngrok-free.app/store/priceRangeWithinCount?minPrice=5&maxPrice=20&comparison=GREATER&comparisonNumber=3",
+					"raw": "https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app/store/price-range-masktype-count?minPrice=5&maxPrice=20&comparison=GREATER&comparisonNumber=3",
 					"protocol": "https",
 					"host": [
-						"22aa-122-100-95-146",
+						"eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb",
 						"ngrok-free",
 						"app"
 					],
 					"path": [
 						"store",
-						"priceRangeWithinCount"
+						"price-range-masktype-count"
 					],
 					"query": [
 						{
@@ -84,10 +84,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://22aa-122-100-95-146.ngrok-free.app/store/maskinfo?storeName=Welltrack&sortBy=PRICE",
+					"raw": "https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app/store/maskinfo?storeName=Welltrack&sortBy=PRICE",
 					"protocol": "https",
 					"host": [
-						"22aa-122-100-95-146",
+						"eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb",
 						"ngrok-free",
 						"app"
 					],
@@ -116,16 +116,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://22aa-122-100-95-146.ngrok-free.app/store/searchStore?keyword=que&searchBy=mask",
+					"raw": "https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app/store/search-store?keyword=que&searchBy=mask",
 					"protocol": "https",
 					"host": [
-						"22aa-122-100-95-146",
+						"eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb",
 						"ngrok-free",
 						"app"
 					],
 					"path": [
 						"store",
-						"searchStore"
+						"search-store"
 					],
 					"query": [
 						{
@@ -148,10 +148,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://22aa-122-100-95-146.ngrok-free.app/user/top-transactions?startDate=2021-01-10&endDate=2021-01-20&greaterNumber=5",
+					"raw": "https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app/user/top-transactions?startDate=2021-01-10&endDate=2021-01-20&greaterNumber=5",
 					"protocol": "https",
 					"host": [
-						"22aa-122-100-95-146",
+						"eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb",
 						"ngrok-free",
 						"app"
 					],
@@ -184,10 +184,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://22aa-122-100-95-146.ngrok-free.app/user/date-range-transaction-info?startDate=2021-01-01&endDate=2021-01-10",
+					"raw": "https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app/user/date-range-transaction-info?startDate=2021-01-01&endDate=2021-01-10",
 					"protocol": "https",
 					"host": [
-						"22aa-122-100-95-146",
+						"eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb",
 						"ngrok-free",
 						"app"
 					],
@@ -207,6 +207,37 @@
 					]
 				},
 				"description": "The total amount of masks and dollar value of transactions within a date range."
+			},
+			"response": []
+		},
+		{
+			"name": "user-buy-mask",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"storeId\": 3,\r\n        \"maskTypeId\": 7\r\n    },\r\n    {\r\n        \"storeId\": 3,\r\n        \"maskTypeId\": 8\r\n    },\r\n    {\r\n        \"storeId\": 5,\r\n        \"maskTypeId\": 17\r\n    },\r\n    {\r\n        \"storeId\": 7,\r\n        \"maskTypeId\": 20\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app/user/buy-mask/5",
+					"protocol": "https",
+					"host": [
+						"eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"user",
+						"buy-mask",
+						"5"
+					]
+				}
 			},
 			"response": []
 		}
