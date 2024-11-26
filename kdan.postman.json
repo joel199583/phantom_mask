@@ -12,11 +12,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app/store/open?weekDay=Sun&time=11:00",
+					"raw": "https://029d3f8f3c13.ngrok.app/store/open?weekDay=Sun&time=11:00",
 					"protocol": "https",
 					"host": [
-						"eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb",
-						"ngrok-free",
+						"029d3f8f3c13",
+						"ngrok",
 						"app"
 					],
 					"path": [
@@ -44,11 +44,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app/store/price-range-masktype-count?minPrice=5&maxPrice=20&comparison=GREATER&comparisonNumber=3",
+					"raw": "https://029d3f8f3c13.ngrok.app/store/price-range-masktype-count?minPrice=5&maxPrice=20&comparison=GREATER&comparisonNumber=3",
 					"protocol": "https",
 					"host": [
-						"eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb",
-						"ngrok-free",
+						"029d3f8f3c13",
+						"ngrok",
 						"app"
 					],
 					"path": [
@@ -84,11 +84,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app/store/maskinfo?storeName=Welltrack&sortBy=PRICE",
+					"raw": "https://029d3f8f3c13.ngrok.app/store/maskinfo?storeName=Welltrack&sortBy=PRICE",
 					"protocol": "https",
 					"host": [
-						"eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb",
-						"ngrok-free",
+						"029d3f8f3c13",
+						"ngrok",
 						"app"
 					],
 					"path": [
@@ -116,11 +116,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app/store/search-store?keyword=que&searchBy=mask",
+					"raw": "https://029d3f8f3c13.ngrok.app/store/search-store?keyword=que&searchBy=mask",
 					"protocol": "https",
 					"host": [
-						"eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb",
-						"ngrok-free",
+						"029d3f8f3c13",
+						"ngrok",
 						"app"
 					],
 					"path": [
@@ -148,11 +148,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app/user/top-transactions?startDate=2021-01-10&endDate=2021-01-20&greaterNumber=5",
+					"raw": "https://029d3f8f3c13.ngrok.app/user/top-transactions?startDate=2021-01-10&endDate=2021-01-20&greaterNumber=5",
 					"protocol": "https",
 					"host": [
-						"eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb",
-						"ngrok-free",
+						"029d3f8f3c13",
+						"ngrok",
 						"app"
 					],
 					"path": [
@@ -184,11 +184,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app/user/date-range-transaction-info?startDate=2021-01-01&endDate=2021-01-10",
+					"raw": "https://029d3f8f3c13.ngrok.app/user/date-range-transaction-info?startDate=2021-01-01&endDate=2021-01-10",
 					"protocol": "https",
 					"host": [
-						"eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb",
-						"ngrok-free",
+						"029d3f8f3c13",
+						"ngrok",
 						"app"
 					],
 					"path": [
@@ -225,11 +225,11 @@
 					}
 				},
 				"url": {
-					"raw": "https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app/user/buy-mask/5",
+					"raw": "https://029d3f8f3c13.ngrok.app/user/buy-mask/5",
 					"protocol": "https",
 					"host": [
-						"eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb",
-						"ngrok-free",
+						"029d3f8f3c13",
+						"ngrok",
 						"app"
 					],
 					"path": [
