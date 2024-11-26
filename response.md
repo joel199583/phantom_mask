@@ -2,7 +2,7 @@
 [this](./kdan.postman.json) json file for Postman.
 
 ## API 文件
-[swagger](https://eea3-2001-b400-e2f0-9123-8988-5e67-6b89-dfcb.ngrok-free.app/swagger-ui/index.html#)
+[Swagger UI](https://029d3f8f3c13.ngrok.app/swagger-ui/index.html#)
 
 ## Demo Site Url
 
