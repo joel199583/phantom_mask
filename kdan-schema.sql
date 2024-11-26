@@ -1,14 +1,18 @@
--- 建立 store 表
-CREATE TABLE store (
+-- 创建数据库 kdan，如果不存在则创建
+CREATE DATABASE IF NOT EXISTS kdan;
+USE kdan;
+
+-- 创建 store 表，如果不存在则创建
+CREATE TABLE IF NOT EXISTS store (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
   cash_balance DECIMAL(10, 2) NOT NULL,
-  opening_hours varchar(100) NOT NULL,
+  opening_hours VARCHAR(100) NOT NULL,
   PRIMARY KEY (id)
 );
 
--- 建立 mask_type 表
-CREATE TABLE mask_type (
+-- 创建 mask_type 表，如果不存在则创建
+CREATE TABLE IF NOT EXISTS mask_type (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
   color VARCHAR(50) NOT NULL,
@@ -16,8 +20,8 @@ CREATE TABLE mask_type (
   PRIMARY KEY (id)
 );
 
--- 建立 store_hours 表
-CREATE TABLE store_hours (
+-- 创建 store_hours 表，如果不存在则创建
+CREATE TABLE IF NOT EXISTS store_hours (
   id INT NOT NULL AUTO_INCREMENT,
   store_id INT,
   weekday VARCHAR(10),  -- Monday, Tuesday, Wednesday, etc.
@@ -27,8 +31,8 @@ CREATE TABLE store_hours (
   FOREIGN KEY (store_id) REFERENCES store(id)
 );
 
--- 建立 mask 表
-CREATE TABLE mask (
+-- 创建 mask 表，如果不存在则创建
+CREATE TABLE IF NOT EXISTS mask (
   id INT NOT NULL AUTO_INCREMENT,
   store_id INT,
   mask_type_id INT,
@@ -38,16 +42,16 @@ CREATE TABLE mask (
   FOREIGN KEY (mask_type_id) REFERENCES mask_type(id)
 );
 
--- 建立 user 表
-CREATE TABLE user (
+-- 创建 user 表，如果不存在则创建
+CREATE TABLE IF NOT EXISTS user (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
   cash_balance DECIMAL(10, 2) NOT NULL,
   PRIMARY KEY (id)
 );
 
--- 建立 transaction_history 表
-CREATE TABLE transaction_history (
+-- 创建 transaction_history 表，如果不存在则创建
+CREATE TABLE IF NOT EXISTS transaction_history (
   id INT NOT NULL AUTO_INCREMENT,
   user_id INT,  -- 用戶 ID
   store_id INT,  -- 藥局 ID（關聯 store 表）
