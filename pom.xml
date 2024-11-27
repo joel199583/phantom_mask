@@ -66,28 +66,22 @@
 	</dependencies>
 
 	<build>
+		<resources>
+	        <!-- 原有的 resource 配置 -->
+	        <resource>
+	            <directory>src/main/resources</directory>
+	        </resource>
+	        <!-- 新增 data 資料夾 -->
+	        <resource>
+	            <directory>${project.basedir}/data</directory>
+	            <targetPath>data</targetPath>
+	        </resource>
+	    </resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-	            <groupId>io.swagger.codegen.v3</groupId>
-	            <artifactId>swagger-codegen-maven-plugin</artifactId>
-	            <version>3.0.41</version>
-	            <executions>
-	                <execution>
-	                    <goals>
-	                        <goal>generate</goal>
-	                    </goals>
-	                </execution>
-	            </executions>
-	            <configuration>
-	                <inputSpec>${project.basedir}/src/main/resources/openapi.yaml</inputSpec>
-	                <output>${project.build.directory}/generated-docs</output>
-	                <lang>html</lang>
-	            </configuration>
-	        </plugin>
 		</plugins>
 	</build>
 
