@@ -22,7 +22,7 @@ Import [kdan.postman.json](./kdan.postman.json) json file to Postman.
 Swagger UI : [https://029d3f8f3c13.ngrok.app/swagger-ui/index.html#](https://029d3f8f3c13.ngrok.app/swagger-ui/index.html#)
 
 ### A.3. Import Data Commands
-Automatically handle English when starting the app.
+Automatically handle when starting the app.
 
 ## B. Bonus Information
 
