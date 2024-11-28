@@ -34,6 +34,7 @@ Not Implemented
 
 ```bash
 docker pull joel0803/kdan-demo:0.0.1
+docker run -d -p 8081:8081 joel0803/kdan-demo:0.0.1
 ```
 
 ### B.3. Demo Site Url
