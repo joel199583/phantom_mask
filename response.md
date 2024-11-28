@@ -28,6 +28,7 @@ Automatically handle when starting the app.
 
 >  If you completed the bonus requirements, please fill in your task below.
 ### B.1. Test Coverage Report
+Not Implemented
 
 ### B.2. Dockerized
 
@@ -46,5 +47,6 @@ The demo site is ready on [Joel's Demo](https://029d3f8f3c13.ngrok.app); you can
 [ERD](./ERD.jpg)
 
 ### C.2. Technical Document
+Not Implemented
 
 - --
