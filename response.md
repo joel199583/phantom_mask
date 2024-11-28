@@ -41,6 +41,9 @@ The demo site is ready on [Joel's Demo](https://029d3f8f3c13.ngrok.app); you can
 ## C. Other Information
 
 ### C.1. ERD
+[schema](./kdan-schema.sql)
+
+
 
 ### C.2. Technical Document
 
