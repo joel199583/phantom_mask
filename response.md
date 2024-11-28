@@ -2,19 +2,19 @@
 ## A. Required Information
 ### A.1. Requirement Completion Rate
 - [x] List all pharmacies open at a specific time and on a day of the week if requested.
-  - Implemented at `GET /api/v1/pharmacies/by/time` API.
+  - Implemented at `GET /store/open` API.
 - [x] List all masks sold by a given pharmacy, sorted by mask name or price.
-  - Implemented at `GET /api/v1/soldmasks/by/pharmacy` API.
+  - Implemented at `GET /store/maskinfo` API.
 - [x] List all pharmacies with more or less than x mask products within a price range.
-  - Implemented at `GET /api/v1/pharmacies/masks/count` API.
+  - Implemented at `GET /store/price-range-masktype-count` API.
 - [x] The top x users by total transaction amount of masks within a date range.
-  - Implemented at `GET /api/v1/usertrans/by/time` API.
+  - Implemented at `GET /user/top-transactions` API.
 - [x] The total number of masks and dollar value of transactions within a date range.
-  - Implemented at `GET /api/v1/masktrans/by/time` API.
+  - Implemented at `GET /user/top-transactions` API.
 - [x] Search for pharmacies or masks by name, ranked by relevance to the search term.
-  - Implemented at `GET /api/v1/pharmacies` API and `GET /api/v1/masks` .
+  - Implemented at `GET /store/search-store` .
 - [x] Process a user purchases a mask from a pharmacy, and handle all relevant data changes in an atomic transaction.
-  - Implemented at `POST /api/v1/purchase/mask` API.
+  - Implemented at `POST /user/buy-mask/{userId}` API.
   
 ### A.2. API Document
 Import [kdan.postman.json](./kdan.postman.json) json file to Postman.
