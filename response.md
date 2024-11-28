@@ -18,9 +18,11 @@
   
 ### A.2. API Document
 Import [kdan.postman.json](./kdan.postman.json) json file to Postman.
+
 Swagger UI : [https://029d3f8f3c13.ngrok.app/swagger-ui/index.html#](https://029d3f8f3c13.ngrok.app/swagger-ui/index.html#)
 
 ### A.3. Import Data Commands
+Automatically handle English when starting the app.
 
 ## B. Bonus Information
 
@@ -39,6 +41,9 @@ The demo site is ready on [Joel's Demo](https://029d3f8f3c13.ngrok.app); you can
 ## C. Other Information
 
 ### C.1. ERD
+[schema](./kdan-schema.sql)
+
+
 
 ### C.2. Technical Document
 
