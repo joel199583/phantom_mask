@@ -1,8 +1,6 @@
--- 创建数据库 kdan，如果不存在则创建
 CREATE DATABASE IF NOT EXISTS kdan;
 USE kdan;
 
--- 创建 store 表，如果不存在则创建
 CREATE TABLE IF NOT EXISTS store (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
@@ -11,7 +9,6 @@ CREATE TABLE IF NOT EXISTS store (
   PRIMARY KEY (id)
 );
 
--- 创建 mask_type 表，如果不存在则创建
 CREATE TABLE IF NOT EXISTS mask_type (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
@@ -20,7 +17,6 @@ CREATE TABLE IF NOT EXISTS mask_type (
   PRIMARY KEY (id)
 );
 
--- 创建 store_hours 表，如果不存在则创建
 CREATE TABLE IF NOT EXISTS store_hours (
   id INT NOT NULL AUTO_INCREMENT,
   store_id INT,
@@ -31,7 +27,6 @@ CREATE TABLE IF NOT EXISTS store_hours (
   FOREIGN KEY (store_id) REFERENCES store(id)
 );
 
--- 创建 mask 表，如果不存在则创建
 CREATE TABLE IF NOT EXISTS mask (
   id INT NOT NULL AUTO_INCREMENT,
   store_id INT,
@@ -42,7 +37,6 @@ CREATE TABLE IF NOT EXISTS mask (
   FOREIGN KEY (mask_type_id) REFERENCES mask_type(id)
 );
 
--- 创建 user 表，如果不存在则创建
 CREATE TABLE IF NOT EXISTS user (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
@@ -50,7 +44,6 @@ CREATE TABLE IF NOT EXISTS user (
   PRIMARY KEY (id)
 );
 
--- 创建 transaction_history 表，如果不存在则创建
 CREATE TABLE IF NOT EXISTS transaction_history (
   id INT NOT NULL AUTO_INCREMENT,
   user_id INT,  -- 用戶 ID
