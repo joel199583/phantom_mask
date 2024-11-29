@@ -38,7 +38,7 @@ docker run -d -p 8081:8081 joel0803/kdan-demo:0.0.1
 ```
 
 ### B.3. Demo Site Url
-The demo site is ready on [Joel's Demo](https://029d3f8f3c13.ngrok.app); you can try any APIs on this demo site.
+[https://029d3f8f3c13.ngrok.app](https://029d3f8f3c13.ngrok.app)
 
 ## C. Other Information
 
